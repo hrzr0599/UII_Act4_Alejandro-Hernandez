@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Proveedores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .proveedor {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .proveedor h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .proveedor p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nuestros Proveedores Para Nuestra Empresa Costco De Hernandez Roman</h1>
+        {% if lista_proveedores %}
+            {% for proveedor in lista_proveedores %}
+                <div class="proveedor">
+                    <h2>{{ proveedor.nombre }}</h2>
+                    <p><strong>Contacto:</strong> {{ proveedor.contacto }}</p>
+                    <p><strong>Teléfono:</strong> {{ proveedor.telefono }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No hay proveedores disponibles.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
